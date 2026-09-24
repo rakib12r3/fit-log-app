@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import banner from '@/assets/banner.png'
 import { oswald } from "@/lib/fonts";
+import { SquareArrowRightEnter } from "lucide-react";
 
 
 
@@ -16,7 +17,7 @@ const Banner = () => {
           FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into
           today's plan, and watch the week's work add up.
         </p>
-        <button className="bg-[#C2F800] p-4 rounded-[10px] mt-5 text-black text-sm font-bold">BROWSE WORKOUTS</button>
+        <button className="flex gap-2 bg-[#C2F800] p-4 rounded-[10px] mt-5 text-black text-sm font-bold">BROWSE WORKOUTS<SquareArrowRightEnter /> </button>
       </div>
       <div>
         <Image src={banner} alt="Banner Image"/>
