@@ -1,13 +1,16 @@
 import Image from "next/image";
 import React from "react";
 import logo from "@/assets/logo.png";
+import { oswald } from "@/lib/fonts";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between items-center py-[15px]">
+    <div className="border-b border-gray-700">
+
+    <div className="flex justify-between items-center py-[15px] mx-[50px]">
       <div className="flex justify-between">
         <Image src={logo} alt="logo image" width={30} height={30} />
-        <p className="text-[22px] font font-semibold">FITLOG</p>
+        <p className={`${oswald.className} text-[22px] font font-semibold`}>FITLOG</p>
       </div>
 
       <ul className="flex justify-between font-semibold">
@@ -26,11 +29,12 @@ const Navbar = () => {
             0
           </span>
         </p>
-        <p className="text-xs">
+        <p className="text-xs font-semibold">
           Saved{" "}
-          <span className="border border-1 rounded-full px-[5px] ">0</span>
+          <span className=" border-1 rounded-full px-[5px] ">0</span>
         </p>
       </div>
+    </div>
     </div>
   );
 };
