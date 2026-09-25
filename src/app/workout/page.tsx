@@ -21,7 +21,7 @@ const LibraryPage = async () => {
         </p>
       </div>
       <div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-10 ">
+        <div id="allCards" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-7 ">
           {allData.map((data: IData, ind: number) => (
             <WorkoutCards key={ind} data={data} />
           ))}
