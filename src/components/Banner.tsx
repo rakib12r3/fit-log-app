@@ -9,8 +9,8 @@ import { SquareArrowRightEnter } from "lucide-react";
 
 const Banner = () => {
   return (
-    <div className="flex bg-[#222630]  mx-[50px]  rounded-2xl  items-center p-[56px] my-7">
-      <div className="space-y-5">
+    <div className="flex bg-[#222630]  mx-auto w-full max-w-[1120px]  rounded-2xl  items-center py-[100px] my-7">
+      <div className="space-y-5 px-[50px]">
         <p className="text-[#C2F800] text-sm font-semibold">WORKOUT LIBRARY</p>
         <h1 className={`${oswald.className} text-6xl font-semibold`}>TRAIN WITH INTENT. LOG EVERY SET.</h1>
         <p className="text-[#9CA3AF]">

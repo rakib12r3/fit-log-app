@@ -1,10 +1,15 @@
 import Banner from "@/components/Banner";
-import Image from "next/image";
+import LibraryPage from "./workout/page";
 
-export default function Home() {
+
+
+export default async function Home () {
+  
+  
   return (
    <div>
-    <Banner/>
+    <Banner />
+    <LibraryPage/>
    </div>
   );
 }

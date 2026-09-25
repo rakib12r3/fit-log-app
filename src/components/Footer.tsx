@@ -5,7 +5,7 @@ import footer from "@/assets/logo.png";
 const Footer = () => {
   return (
     <div className="border-t border-gray-700 ">
-      <div className="flex justify-between items-center py-5 mx-[50px]">
+      <div className="flex justify-between items-center py-5  mx-auto w-full max-w-[1120px] ">
         <div className="flex ">
           <Image src={footer} alt="Footer Logo" />
           <p>FITLOG</p>
