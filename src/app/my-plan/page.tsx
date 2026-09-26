@@ -12,13 +12,24 @@ import SavedPlans from "@/components/shared/SavedPlan";
 export default function App() {
   const [activeTab, setActiveTab] = useState("Saved");
   const { plan, saved } = useContext(WorkoutContext);
-  
-  
+  const [sortBy, setSortBy] = useState<
+  "duration" | "caloriesBurned" | "rating"
+>("duration");
 
-
- 
   const plansData = getWorkoutStats(plan);
-  const savedData = getWorkoutStatsForSaved(saved); 
+  const savedData = getWorkoutStatsForSaved(saved);
+  // console.log(sortBy, 'from sortby');
+  // .......................................
+
+  const sortedPlan = [...plan].sort((a, b) => {
+    return Number(b[sortBy]) - Number(a[sortBy]);
+  });
+
+  const sortedSaved = [...saved].sort((a, b) => {
+    return Number(b[sortBy]) - Number(a[sortBy]);
+  });
+
+  // ------------------------------------
 
   return (
     <>
@@ -100,12 +111,33 @@ export default function App() {
           </div>
 
           {/* Sort By */}
-          <div className="flex items-center gap-3 text-sm self-end sm:self-auto">
-            <span className="text-[#616876]">Sort By</span>
-
-            
+          <div className="flex flex-col gap-2">
+            <label className="font-medium">Sort By</label>
+            <select
+              value={sortBy}
+              onChange={(e) =>
+                setSortBy(
+                  e.target.value as "duration" | "caloriesBurned" | "rating",
+                )
+              }
+              className="select select-success"
+            >
+              <option value="duration">Duration</option>
+              <option value="caloriesBurned">Calories</option>
+              <option value="rating">Rating</option>
+            </select>
+            {/* <select 
+            value={sortBy} 
+            onChange={(e) => setSortBy(e.target.value as "duration"| "calories" | "rating" )}
+              defaultValue="Pick a Runtime"
+              className="select select-success"
+            >
+              <option disabled>Pick a Runtime</option>
+              <option value={"duration"}>Duration</option>
+              <option value={"calories"}>Calories</option>
+              <option value={"rating"}>Rating</option>
+            </select> */}
           </div>
-         
         </div>
 
         {/* ========================= */}
@@ -113,13 +145,13 @@ export default function App() {
         {/* ========================= */}
 
         <div className="w-full ">
-         
           <div className="w-full">
-            {activeTab === "Today's Plan" && <TodaysPlan plan={plan} />}
+            {/* {activeTab === "Today's Plan" && <TodaysPlan plan={plan} />} */}
+            {activeTab === "Today's Plan" && <TodaysPlan plan={sortedPlan} />}
 
-            {activeTab === "Saved" && <SavedPlans saved={saved} />}
+            {/* {activeTab === "Saved" && <SavedPlans saved={saved} />} */}
+            {activeTab === "Saved" && <SavedPlans saved={sortedSaved} />}
           </div>
-          
         </div>
       </div>
     </>
