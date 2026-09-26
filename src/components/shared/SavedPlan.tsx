@@ -13,7 +13,7 @@ const SavedPlans = ({ saved }: ISavedPlansProps) => {
     <div className="w-full flex flex-col gap-4">
       {saved.length > 0 ? (
         saved.map((item: IData) => (
-          <MyPlansCard key={item.id} item={item} />
+          <MyPlansCard key={item.id} item={item} showDone={false}  />
         ))
       ) : (
         <div className="w-full">

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const MyPlansCard = ({ item }: { item: IData }) => {
+const MyPlansCard = ({ item,showDone }: { item: IData,showDone:boolean }) => {
   return (
     <div>
       {/* <h3>My plans cards</h3> */}
@@ -62,10 +62,12 @@ const MyPlansCard = ({ item }: { item: IData }) => {
               </Link>
 
               {/* Mark as Done */}
+              {showDone && (
               <div className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#ccff00] text-black text-sm font-bold">
                 <Check size={15} />
                 Mark as Done
               </div>
+              )}
 
               {/* Close / Remove */}
               <div className="text-[#737b8a] p-1">
