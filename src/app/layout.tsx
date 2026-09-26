@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WorkoutProvider from "@/context/WorkoutProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +14,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-
 
 export const metadata: Metadata = {
   title: "Fit-log App",
@@ -28,10 +27,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col  bg-gray-950 text-white">
-        <Navbar/>
+        <WorkoutProvider>
+
+        <Navbar />
         {children}
-        <Footer/>
-        </body>
+        <Footer />
+        </WorkoutProvider>
+      </body>
     </html>
   );
 }

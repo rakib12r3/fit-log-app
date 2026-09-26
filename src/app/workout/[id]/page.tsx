@@ -1,6 +1,7 @@
 import CardsDetails from "@/components/CardsDetails";
 import { IData } from "@/type/data.type";
 import React from "react";
+
 interface ICardsDetailsPage {
   params: Promise<IData>;
 }

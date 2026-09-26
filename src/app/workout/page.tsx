@@ -11,7 +11,8 @@ const getData = async () => {
 
 const LibraryPage = async () => {
   const allData = await getData();
-  console.log(allData, "from Home page");
+  // console.log(allData, "from Home page");
+  
   return (
     <div className=" mx-auto w-full max-w-[1120px] ">
       <div className="py-[25px] space-y-2 mt-11">

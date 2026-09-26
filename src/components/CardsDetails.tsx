@@ -1,8 +1,9 @@
 import { oswald } from "@/lib/fonts";
 import { IData } from "@/type/data.type";
-import { Bookmark, CalendarPlus } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import AddToPlanBtn from "./cardDetails/AddToPlanBtn";
+import SaveFotLater from "./cardDetails/SaveLaterBtn";
 
 interface ICardsDetails {
   data: IData;
@@ -21,13 +22,16 @@ const CardsDetails = ({ data }: ICardsDetails) => {
         />
       </div>
       <div className="space-y-6">
-        <h3 className={`${oswald.className} text-3xl font-bold`}>{data.name}</h3>
-        <p className="text-[#9CA3AF]">
-        {data.description}
-        </p>
+        <h3 className={`${oswald.className} text-3xl font-bold`}>
+          {data.name}
+        </h3>
+        <p className="text-[#9CA3AF]">{data.description}</p>
         <div className="flex gap-2">
           {data.muscleGroups.map((muscle: string) => (
-            <p className="bg-[#CCFF00] text-sm font-semibold rounded-[8px] px-3 text-black" key={muscle}>
+            <p
+              className="bg-[#CCFF00] text-sm font-semibold rounded-[8px] px-3 text-black"
+              key={muscle}
+            >
               {muscle}
             </p>
           ))}
@@ -51,16 +55,22 @@ const CardsDetails = ({ data }: ICardsDetails) => {
 
               <tr className="border-b  border-gray-700">
                 <td className="py-3 px-7 text-gray-500">SETS</td>
-                <td className="py-3 px-7 text-right font-medium">{data.sets}</td>
+                <td className="py-3 px-7 text-right font-medium">
+                  {data.sets}
+                </td>
               </tr>
 
               <tr className="border-b  border-gray-700">
                 <td className="py-3 px-7 text-gray-500">REPS</td>
-                <td className="py-3 px-7 text-right font-medium">{data.reps}</td>
+                <td className="py-3 px-7 text-right font-medium">
+                  {data.reps}
+                </td>
               </tr>
               <tr className="border-b  border-gray-700">
                 <td className="py-3 px-7 text-gray-500">DURATION</td>
-                <td className="py-3 px-7 text-right font-medium">{data.duration} min</td>
+                <td className="py-3 px-7 text-right font-medium">
+                  {data.duration} min
+                </td>
               </tr>
               <tr className="border-b  border-gray-700">
                 <td className="py-3 px-7 text-gray-500">CALORIES</td>
@@ -70,12 +80,16 @@ const CardsDetails = ({ data }: ICardsDetails) => {
               </tr>
               <tr>
                 <td className="py-3 px-7 text-gray-500">RATING</td>
-                <td className="py-3 px-7 text-right font-medium">{data.rating}</td>
+                <td className="py-3 px-7 text-right font-medium">
+                  {data.rating}
+                </td>
               </tr>
             </tbody>
           </table>
           <div className="py-5 space-y-5">
-            <p className={`${oswald.className} font-bold text-[20px]`}>INSTRUCTIONS</p>
+            <p className={`${oswald.className} font-bold text-[20px]`}>
+              INSTRUCTIONS
+            </p>
             <ol>
               {data.instructions.map((instruction: string, ind: number) => (
                 <li key={ind} className="text-[#D1D5DB]">
@@ -86,14 +100,15 @@ const CardsDetails = ({ data }: ICardsDetails) => {
             </ol>
           </div>
           <div className="flex gap-2">
-            <button className="flex gap-2 py-2 font-bold bg-[#CCFF00] px-8  rounded-2xl text-black">
-              <CalendarPlus /> Add to today's plan
-            </button>
-             
-            <button className="flex border font-bold py-2 px-5 gap-2 rounded-2xl">
+            <AddToPlanBtn data={data}/>
+            
+
+            {/* <button className="flex border font-bold py-2 px-5 gap-2 rounded-2xl">
               <Bookmark />
               Save for later
-            </button>
+            </button> */}
+           <SaveFotLater data={data}/>
+          
           </div>
         </div>
       </div>
