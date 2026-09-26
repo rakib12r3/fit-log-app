@@ -35,7 +35,7 @@ const Banner = () => {
               sm:text-4xl
               md:text-5xl
               lg:text-5xl
-              
+              font-bold
               leading-tight
             `}
           >
@@ -47,7 +47,7 @@ const Banner = () => {
             into today's plan, and watch the week's work add up.
           </p>
 
-          <a href="#allCards">
+          <a href="#library">
             <button
               className="
                 inline-flex

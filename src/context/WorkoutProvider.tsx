@@ -7,9 +7,7 @@ interface IWorkoutContext {
   plan: IData[];
   setPlan: React.Dispatch<React.SetStateAction<IData[]>>;
   setSaved: React.Dispatch<React.SetStateAction<IData[]>>;
-
   saved: IData[];
-  
 }
 export const WorkoutContext = createContext<IWorkoutContext>({
   plan: [],

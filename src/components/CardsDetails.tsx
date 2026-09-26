@@ -33,13 +33,13 @@ const CardsDetails = ({ data }: ICardsDetails) => {
       "
     >
       {/* Image */}
-      <div className="w-full lg:w-auto h-auto lg:h-[700px]">
+      <div className="w-full lg:w-auto h-auto lg:h-[720px]">
         <Image
           className="rounded-2xl w-full lg:w-auto h-auto lg:h-full"
           src={data.image}
           alt={data.name}
           width={600}
-          height={600}
+          height={700}
         />
       </div>
 

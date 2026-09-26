@@ -47,7 +47,7 @@ const LibraryPage = async () => {
 
       {/* Cards */}
       <div
-        id="allCards"
+        id="library"
         className="
         scroll-mt-[90px]
           grid

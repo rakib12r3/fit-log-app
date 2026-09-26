@@ -21,7 +21,7 @@ const AddToPlanBtn = ({ data }: IAddToPlanBtn) => {
       return;
     }
     setPlan([...plan, data]);
-    toast.success("Workout added to today's plan!");
+    toast.success("Added to today's plan");
   };
   return (
     <div>

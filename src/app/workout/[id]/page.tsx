@@ -1,5 +1,6 @@
 import CardsDetails from "@/components/CardsDetails";
 import { IData } from "@/type/data.type";
+import { notFound } from "next/navigation";
 import React from "react";
 
 interface ICardsDetailsPage {
@@ -16,7 +17,10 @@ const CardsDetailsPage = async ({ params }: ICardsDetailsPage) => {
   const allData = await getData();
   const { id } = await params;
   const data = allData.find((data: IData) => data.id === Number(id));
-  console.log(data, "from details page");
+  // console.log(data, "from details page");
+    if (!data) {
+    notFound();
+  }
 
   return (
     <div>

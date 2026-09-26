@@ -17,11 +17,11 @@ const SaveFotLater = ({ data }: IAddToPlanBtn) => {
     // console.log("Save for later btn trigerd", saved);
     const alreadyAdded = saved.filter((item) => item.id === data.id);
     if (alreadyAdded.length > 0) {
-          toast.error("This workout is already in today's plan!");
+          toast.error("This workout is already added in Saved");
           return;
         }
         setSaved([...saved, data]);
-        toast.success("Workout added to today's plan!");
+        toast.success("Added to  Saved");
   };
   return (
     <div>

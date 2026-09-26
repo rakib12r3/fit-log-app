@@ -13,6 +13,9 @@ const MyPlansCard = ({
   showDone: boolean;
   removeItem: (id: number) => void;
 }) => {
+
+
+
   return (
     <div>
       {/* <h3>My plans cards</h3> */}

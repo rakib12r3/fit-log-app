@@ -5,6 +5,7 @@ import MyPlansCard from "@/components/MyPlansCard";
 import { IData } from "@/type/data.type";
 import { WorkoutContext } from "@/context/WorkoutProvider";
 import Link from "next/link";
+import { toast } from "react-toastify";
 
 interface ISavedPlansProps {
   saved: IData[];
@@ -12,14 +13,19 @@ interface ISavedPlansProps {
 
 const SavedPlans = ({ saved }: ISavedPlansProps) => {
   const { setSaved } = useContext(WorkoutContext);
-   const removeItem = (id: number) => {
-  setSaved((prev) => prev.filter((item) => item.id !== id));
-};
+  const removeItem = (id: number) => {
+    setSaved((prev) => prev.filter((item) => item.id !== id));
+  };
   return (
     <div className="w-full flex flex-col gap-4">
       {saved.length > 0 ? (
         saved.map((item: IData) => (
-          <MyPlansCard key={item.id} item={item} showDone={false} removeItem={removeItem} />
+          <MyPlansCard
+            key={item.id}
+            item={item}
+            showDone={false}
+            removeItem={removeItem}
+          />
         ))
       ) : (
         <div className="w-full ">
@@ -31,8 +37,13 @@ const SavedPlans = ({ saved }: ISavedPlansProps) => {
             <p className="text-sm text-[#616876] max-w-sm mb-6 text-center">
               Browse the library and add a lift to get today moving.
             </p>
- <Link href="/" className="bg-[#ccff00] text-black font-extrabold text-sm px-6 py-3 rounded-full hover:bg-[#b8e600] transition-transform active:scale-95 shadow-md shadow-[#ccff00]/10 inline-block" > Go to workouts </Link>
-           
+            <Link
+              href="/"
+              className="bg-[#ccff00] text-black font-extrabold text-sm px-6 py-3 rounded-full hover:bg-[#b8e600] transition-transform active:scale-95 shadow-md shadow-[#ccff00]/10 inline-block"
+            >
+              {" "}
+              Go to workouts{" "}
+            </Link>
           </div>
         </div>
       )}
