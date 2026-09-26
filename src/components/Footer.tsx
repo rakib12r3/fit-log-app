@@ -11,7 +11,7 @@ const Footer = () => {
           <p>FITLOG</p>
         </div>
         <div>
-          <p>© 2026 FitLog — Workout Library. Train hard, log honest.</p>
+          <p className="text-[#8A92A0]">© 2026 FitLog — Workout Library. Train hard, log honest.</p>
         </div>
       </div>
     </div>

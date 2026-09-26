@@ -4,6 +4,7 @@ import React, { useContext } from "react";
 import MyPlansCard from "@/components/MyPlansCard";
 import { IData } from "@/type/data.type";
 import { WorkoutContext } from "@/context/WorkoutProvider";
+import Link from "next/link";
 
 interface ITodaysPlanProps {
   plan: IData[];
@@ -31,10 +32,10 @@ const TodaysPlan = ({ plan }: ITodaysPlanProps) => {
             <p className="text-sm text-[#616876] max-w-sm mb-6 text-center">
               Browse the library and add a lift to get today moving.
             </p>
-
-            <button className="bg-[#ccff00] text-black font-extrabold text-sm px-6 py-3 rounded-full hover:bg-[#b8e600] transition-transform active:scale-95 shadow-md shadow-[#ccff00]/10">
-              Go to workouts
-            </button>
+         <Link href="/" className="bg-[#ccff00] text-black font-extrabold text-sm px-6 py-3 rounded-full hover:bg-[#b8e600] transition-transform active:scale-95 shadow-md shadow-[#ccff00]/10 inline-block" > Go to workouts </Link>
+          
+          
+         
           </div>
         </div>
       )}

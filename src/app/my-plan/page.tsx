@@ -33,10 +33,8 @@ export default function App() {
 
   return (
     <>
-      <div className=" mx-auto w-full max-w-[1120px]">
-        <h1>
-          To day's Plan: {plan.length} | saved: {saved.length}
-        </h1>
+      <div className=" mx-auto w-full max-w-[1120px] my-7">
+        
         {/* Title */}
         <div className="mb-8">
           <h1 className={`${oswald.className} text-4xl text-white mb-2`}>
@@ -111,16 +109,16 @@ export default function App() {
           </div>
 
           {/* Sort By */}
-          <div className="flex flex-col gap-2">
-            <label className="font-medium">Sort By</label>
+          <div className="flex flex-row items-center gap-2">
+            <label className="font-semibold px-7 whitespace-nowrap">Sort by</label>
             <select
-              value={sortBy}
+              value={sortBy} 
               onChange={(e) =>
                 setSortBy(
                   e.target.value as "duration" | "caloriesBurned" | "rating",
                 )
               }
-              className="select select-success"
+              className="select select-success w-[300px]"
             >
               <option value="duration">Duration</option>
               <option value="caloriesBurned">Calories</option>
