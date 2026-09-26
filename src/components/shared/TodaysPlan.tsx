@@ -1,19 +1,25 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 import MyPlansCard from "@/components/MyPlansCard";
 import { IData } from "@/type/data.type";
+import { WorkoutContext } from "@/context/WorkoutProvider";
 
 interface ITodaysPlanProps {
   plan: IData[];
 }
 
 const TodaysPlan = ({ plan }: ITodaysPlanProps) => {
+
+  const { setPlan } = useContext(WorkoutContext);
+  const removeItem = (id: number) => {
+  setPlan((prev) => prev.filter((item) => item.id !== id));
+};
   return (
     <div className="w-full flex flex-col gap-4">
       {plan.length > 0 ? (
         plan.map((item: IData) => (
-          <MyPlansCard key={item.id} item={item} showDone={true} />
+          <MyPlansCard key={item.id} item={item} showDone={true} removeItem={removeItem} />
         ))
       ) : (
         <div className="w-full">

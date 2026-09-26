@@ -126,17 +126,7 @@ export default function App() {
               <option value="caloriesBurned">Calories</option>
               <option value="rating">Rating</option>
             </select>
-            {/* <select 
-            value={sortBy} 
-            onChange={(e) => setSortBy(e.target.value as "duration"| "calories" | "rating" )}
-              defaultValue="Pick a Runtime"
-              className="select select-success"
-            >
-              <option disabled>Pick a Runtime</option>
-              <option value={"duration"}>Duration</option>
-              <option value={"calories"}>Calories</option>
-              <option value={"rating"}>Rating</option>
-            </select> */}
+         
           </div>
         </div>
 

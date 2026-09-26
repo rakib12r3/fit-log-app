@@ -3,18 +3,25 @@ import { WorkoutContext } from "@/context/WorkoutProvider";
 import { IData } from "@/type/data.type";
 import { CalendarPlus } from "lucide-react";
 import React, { useContext } from "react";
+import { toast } from "react-toastify";
 
-interface IAddToPlanBtn{
-  data:IData;
+interface IAddToPlanBtn {
+  data: IData;
 }
 
-const AddToPlanBtn = ({ data }:IAddToPlanBtn) => {
+const AddToPlanBtn = ({ data }: IAddToPlanBtn) => {
+  const { plan, setPlan } = useContext(WorkoutContext);
 
-  const {plan, setPlan} = useContext(WorkoutContext);
-  
   const handleAddToPlan = () => {
-    setPlan([...plan, data])
-    console.log("Add to plan btn trigerd", plan);
+    // setPlan([...plan, data])
+    // console.log("Add to plan btn trigerd", plan);
+    const alreadyAdded = plan.filter((item) => item.id === data.id);
+    if (alreadyAdded.length > 0) {
+      toast.error("This workout is already in today's plan!");
+      return;
+    }
+    setPlan([...plan, data]);
+    toast.success("Workout added to today's plan!");
   };
   return (
     <div>
