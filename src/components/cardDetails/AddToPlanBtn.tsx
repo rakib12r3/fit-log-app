@@ -27,7 +27,7 @@ const AddToPlanBtn = ({ data }: IAddToPlanBtn) => {
     <div>
       <button
         onClick={() => handleAddToPlan()}
-        className="flex gap-2 py-2 font-bold bg-[#CCFF00] px-8  rounded-2xl text-black"
+        className="flex gap-2 py-2 font-bold bg-[#CCFF00] px-8  rounded-2xl text-black active:scale-95 transition-transform cursor-pointer"
       >
         <CalendarPlus /> Add to today's plan
       </button>

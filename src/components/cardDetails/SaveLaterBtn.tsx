@@ -27,7 +27,7 @@ const SaveFotLater = ({ data }: IAddToPlanBtn) => {
     <div>
       <button
         onClick={() => handleSaveForLater()}
-        className="flex border font-bold py-2 px-5 gap-2 rounded-2xl"
+        className="flex border font-bold py-2 px-5 gap-2 rounded-2xl active:scale-95 transition-transform cursor-pointer"
       >
         <Bookmark />
         Save for later

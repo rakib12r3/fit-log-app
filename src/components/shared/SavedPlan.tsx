@@ -29,7 +29,7 @@ const SavedPlans = ({ saved }: ISavedPlansProps) => {
             </h2>
 
             <p className="text-sm text-[#616876] max-w-sm mb-6 text-center">
-              Browse the library and save a workout to get started.
+              Browse the library and add a lift to get today moving.
             </p>
  <Link href="/" className="bg-[#ccff00] text-black font-extrabold text-sm px-6 py-3 rounded-full hover:bg-[#b8e600] transition-transform active:scale-95 shadow-md shadow-[#ccff00]/10 inline-block" > Go to workouts </Link>
            

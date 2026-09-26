@@ -13,7 +13,7 @@ const WorkoutCards = ({ data }: IWorkoutCards) => {
   return (
     <div>
       <Link href={`/workout/${data.id}`}>
-        <div className="hover:border border-amber-400 transition rounded-2xl overflow-hidden bg-[#20242E]">
+        <div className="hover:border border-[#C2F800] transition rounded-2xl overflow-hidden bg-[#20242E]">
           <Image
             src={data.image}
             alt={data.name}
@@ -36,7 +36,7 @@ const WorkoutCards = ({ data }: IWorkoutCards) => {
               {data.name}
             </h4>
             <p>{data.equipment}</p>
-            <div className="flex text-xs">
+            <div className="flex text-xs gap-3">
               <p className="flex">
                 <Clock className="text-[#C2F800] " size={16} />
                 {data.duration} min
