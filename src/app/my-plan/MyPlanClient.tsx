@@ -9,9 +9,9 @@ import SavedPlans from "@/components/shared/SavedPlan";
 
 
 export default function MyPlanClient() {
-  const [activeTab, setActiveTab] = useState("Today's Plan");
+  // const [activeTab, setActiveTab] = useState("Today's Plan");
 
-  const { plan, saved  } = useContext(WorkoutContext);
+  const { plan, saved, activeTab,setActiveTab } = useContext(WorkoutContext);
 
   const [sortBy, setSortBy] = useState<
     "duration" | "caloriesBurned" | "rating"
@@ -256,9 +256,9 @@ export default function MyPlanClient() {
           </div>
         </div>
 
-        {/* ========================= */}
+     
         {/* Tab Content */}
-        {/* ========================= */}
+       
 
         <div className="w-full">
           {activeTab === "Today's Plan" && (

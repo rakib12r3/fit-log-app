@@ -6,7 +6,7 @@ import React from "react";
 
 const getData = async () => {
   const res = await fetch(
-    "https://api.abcz.workers.dev/api/fitlog"
+    "https://api.api-store.workers.dev/api/fitlog"
   );
 
   const data = await res.json();

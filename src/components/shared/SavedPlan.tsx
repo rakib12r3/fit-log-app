@@ -1,21 +1,14 @@
 "use client";
-
-import React, { useContext } from "react";
 import MyPlansCard from "@/components/MyPlansCard";
 import { IData } from "@/type/data.type";
-import { WorkoutContext } from "@/context/WorkoutProvider";
 import Link from "next/link";
-import { toast } from "react-toastify";
 
 interface ISavedPlansProps {
   saved: IData[];
 }
 
 const SavedPlans = ({ saved }: ISavedPlansProps) => {
-  const { setSaved } = useContext(WorkoutContext);
-  const removeItem = (id: number) => {
-    setSaved((prev) => prev.filter((item) => item.id !== id));
-  };
+ 
   return (
     <div className="w-full flex flex-col gap-4">
       {saved.length > 0 ? (
@@ -24,7 +17,7 @@ const SavedPlans = ({ saved }: ISavedPlansProps) => {
             key={item.id}
             item={item}
             showDone={false}
-            removeItem={removeItem}
+            
           />
         ))
       ) : (

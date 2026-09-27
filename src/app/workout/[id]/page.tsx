@@ -8,7 +8,7 @@ interface ICardsDetailsPage {
 }
 
 const getData = async () => {
-  const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
+  const res = await fetch("https://api.api-store.workers.dev/api/fitlog");
   const data = await res.json();
   return data;
 };
@@ -16,7 +16,7 @@ const getData = async () => {
 const CardsDetailsPage = async ({ params }: ICardsDetailsPage) => {
   const allData = await getData();
   const { id } = await params;
-  const data = allData.find((data: IData) => data.id === Number(id));
+  const data = allData.find((data: IData) => Number(data.id) === Number(id));
   // console.log(data, "from details page");
     if (!data) {
     notFound();

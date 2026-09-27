@@ -17,7 +17,7 @@ const AddToPlanBtn = ({ data }: IAddToPlanBtn) => {
     // console.log("Add to plan btn trigerd", plan);
     const alreadyAdded = plan.filter((item) => item.id === data.id);
     if (alreadyAdded.length > 0) {
-      toast.error("This workout is already in today's plan!");
+      toast.error("Already added in your plan");
       return;
     }
     setPlan([...plan, data]);

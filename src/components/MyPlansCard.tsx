@@ -1,21 +1,18 @@
 import { IData } from "@/type/data.type";
-import { Check, Clock, Flame, Star, X } from "lucide-react";
+import { Clock, Flame, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import MarkAsDoneBtn from "./myPlanCardBtn/MarkAsDoneBtn";
+import RemoveBtn from "./myPlanCardBtn/RemoveBtn";
 
 const MyPlansCard = ({
   item,
   showDone,
-  removeItem,
 }: {
   item: IData;
   showDone: boolean;
-  removeItem: (id: number) => void;
 }) => {
-
-
-
   return (
     <div>
       {/* <h3>My plans cards</h3> */}
@@ -67,29 +64,15 @@ const MyPlansCard = ({
             <div className="flex items-center gap-3 shrink-0">
               {/* View Details */}
               <Link href={`/workout/${item.id}`}>
-                <button className="px-4 py-2 rounded-full border border-[#303847] text-sm text-[#d1d5db] hover:bg-gray-950 hover:border-0">
+                <button className="px-4 py-2 rounded-full border border-[#303847] text-sm text-[#d1d5db] hover:bg-gray-950 hover:border-0 cursor-pointer">
                   View Details
                 </button>
               </Link>
 
               {/* Mark as Done */}
-              {showDone && (
-                <button onClick={() => removeItem(item.id)} className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#ccff00] text-black text-sm font-bold">
-                  <Check size={15} />
-                  Mark as Done
-                </button>
-              )}
+              {showDone && <MarkAsDoneBtn item={item} />}
 
-              {/* Close / Remove */}
-              {/* <div className="text-[#737b8a] p-1">
-                <X size={18} />
-              </div> */}
-              <button
-                onClick={() => removeItem(item.id)}
-                className="text-[#737b8a] p-1 hover:text-red-500 transition"
-              >
-                <X size={18} />
-              </button>
+              <RemoveBtn item={item} />
             </div>
           </div>
         </div>

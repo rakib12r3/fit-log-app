@@ -63,7 +63,8 @@ const Banner = () => {
                 font-bold
                 hover:bg-[#b8e600]
                 transition
-                active:scale-95
+                active:scale-95 
+                cursor-pointer
               "
             >
               BROWSE WORKOUTS
