@@ -1,4 +1,4 @@
-# Project Name: # FitLog — Workout Library
+# Project Name: FitLog — Workout Library
 
 FitLog is a modern and responsive workout library web application designed to help users discover exercises, build their daily workout plan, and save their favorite workouts. Users can browse different exercises, view workout details, add exercises to their plan, and manage their saved workouts through a clean and user-friendly interface.
 
