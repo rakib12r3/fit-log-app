@@ -4,7 +4,7 @@ const DynamicLoadingPage = () => {
   return (
     <div className="flex min-h-[60vh] items-center justify-center">
       <h1 className="text-4xl font-bold text-white">
-        Loading workouts…
+        Loading workout…
       </h1>
     </div>
   );
